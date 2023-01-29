@@ -6,6 +6,7 @@ def cons_2(x, y):
             return y
     return f
 
+
 def cons(head, tail):
     return lambda selector: selector(head, tail)
 
@@ -16,12 +17,7 @@ def cons(head, tail):
 def car(fn):
     return fn(lambda head, tail: head)
 
+
 def cdr(fn):
     return fn(lambda head, tail: tail)
-
-
 # END
-pair = cons(1, 3)
-a = car(pair)
-b = cdr(pair)
-print(a, b)
